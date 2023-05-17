@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: local
+server:
+  port: 8001
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  redis:
+    host: localhost
+    port: 6379
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  redis:
+    host: musinsa-redis
+    port: 6379

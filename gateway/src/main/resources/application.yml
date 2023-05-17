@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: local
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+  endpoint:
+    gateway:
+      enabled: true
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+backoffice:
+  path: /backoffice/**
+  server: http://localhost:8000
+search:
+  path: /search/**
+  server: http://localhost:8001
+aggregator:
+  path: /aggregator/**
+  server: http://localhost:8002
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+backoffice:
+  path: /backoffice/**
+  server: http://backoffice:8000
+search:
+  path: /search/**
+  server: http://search:8001
+aggregator:
+  path: /aggregator/**
+  server: http://aggregator:8002

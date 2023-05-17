@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  musinsa-h2:
+    image: oscarfonts/h2:2.1.210
+    container_name: musinsa-h2
+    environment:
+      - H2_OPTIONS=-ifNotExists
+  musinsa-redis:
+    image: redis:7.0.4
+    container_name: musinsa-redis
+    depends_on:
+      - musinsa-h2
+  backoffice:
+    image: musinsa/backoffice:1.0
+    container_name: backoffice
+    depends_on:
+      - musinsa-redis
+  aggregator:
+    image: musinsa/aggregator:1.0
+    container_name: aggregator
+    depends_on:
+      - backoffice
+  search:
+    image: musinsa/search:1.0
+    container_name: search
+    depends_on:
+      - aggregator
+  gateway:
+    image: musinsa/gateway:1.0
+    container_name: gateway
+    ports:
+      - 8080:8080
+    depends_on:
+      - search

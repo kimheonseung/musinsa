@@ -1,0 +1,445 @@
+{
+	"info": {
+		"_postman_id": "875382dd-a70e-4c49-be68-67732e9397ae",
+		"name": "musinsa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12363635"
+	},
+	"item": [
+		{
+			"name": "카테고리 별 최저가격 브랜드와 상품 가격, 총액 조회 API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/search/api/v1/price/lowest/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search",
+						"api",
+						"v1",
+						"price",
+						"lowest",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "단일 브랜드로 모든 카테고리 상품 구매 시 최저가격 브랜드와 카테고리의 상품가격, 총액 조회 API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/search/api/v1/price/lowest/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search",
+						"api",
+						"v1",
+						"price",
+						"lowest",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "카테고리 이름으로 최저, 최고 가격 브랜드와 상품 가격을 조회하는 API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/search/api/v1/price/comparison/category?category=스니커즈",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search",
+						"api",
+						"v1",
+						"price",
+						"comparison",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "스니커즈"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 추가 - 신규",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"새로운브랜드명\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 추가 - 중복",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"G\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 수정 - 성공",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 수정 - 중복",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"name\": \"B\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 삭제 - 성공",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "브랜드 삭제 - 미존재",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 추가 - 신규",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemName\": \"새로운상품명\",\n    \"categoryName\": \"바지\",\n    \"brandName\": \"B\",\n    \"price\": 5400\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 추가 - 중복",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemName\": \"D의 상의\",\n    \"categoryName\": \"상의\",\n    \"brandName\": \"D\",\n    \"price\": 3400\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 수정 - 성공",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 20,\n    \"itemName\": \"변경상의\",\n    \"brandName\": \"H\",\n    \"categoryName\": \"상의\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 수정 - 중복",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 33,\n    \"itemName\": \"B의 상의\",\n    \"brandName\": \"B\",\n    \"categoryName\": \"상의\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 삭제 - 성공",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "상품 삭제 - 미존재",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/backoffice/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"backoffice",
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
